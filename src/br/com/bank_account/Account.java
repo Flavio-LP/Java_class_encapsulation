@@ -15,7 +15,12 @@ public class Account {
     }
 
     public void setChequeEspecial(){
-        this.LIMITE_CHEQUE_ESPECIAL = this.saldo <= 500 ? 50 : this.saldo * 0.5;
+        this.LIMITE_CHEQUE_ESPECIAL = saldo <= 500 ? 50 : saldo * 0.5;
+        System.out.println("Limite: " + this.LIMITE_CHEQUE_ESPECIAL);
+    }
+
+    public double getLimiteChequeEspecial(){
+        return this.LIMITE_CHEQUE_ESPECIAL;
     }
 
     public double getChequeEspecial(){ //consulta cheque especial
@@ -30,14 +35,14 @@ public class Account {
         return false;
     }
 
-    public void DepositarSaldo(float saldo){ //depositar dinheiro
+    public void DepositarSaldo(double saldo){ //depositar dinheiro
         this.saldo += saldo;
     }
 
-    public boolean SacarDinheiro(float saldo){ //sacar dinheiro
+    public boolean SacarDinheiro(double saldo){ //sacar dinheiro
 
         if (saldo <= this.saldo){
-            this.saldo =- saldo;
+            this.saldo -= saldo;
             return true;
         }
 
