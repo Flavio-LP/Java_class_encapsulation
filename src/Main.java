@@ -57,7 +57,7 @@ public class Main {
         
         while (menu){
 
-            LimpaTerminal();
+           
 
             System.out.println("-----------------------------");
             System.out.println("- Bem vindo ao java banking -");
@@ -71,6 +71,8 @@ public class Main {
             System.out.println("- 7 - Sair                  -");
             System.out.println("-----------------------------");
             opcao = scanner.nextInt();
+
+            LimpaTerminal();
 
             switch(opcao){
                 
