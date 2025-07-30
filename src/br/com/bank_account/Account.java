@@ -1,0 +1,65 @@
+package br.com.bank_account;
+
+public class Account {
+
+    private double saldo = 0;
+    private double cheque_especial = 0;
+    private double LIMITE_CHEQUE_ESPECIAL = 0;
+
+    public void setSaldo(float saldo) {
+        this.saldo = saldo;
+    }
+
+    public double getSaldo(){ //consulta o saldo
+        return this.saldo;
+    }
+
+    public void setChequeEspecial(){
+        this.LIMITE_CHEQUE_ESPECIAL = this.saldo <= 500 ? 50 : this.saldo * 0.5;
+    }
+
+    public double getChequeEspecial(){ //consulta cheque especial
+        return this.cheque_especial;
+    }
+
+    public boolean VerificaUsoChequeEsp(){ //verifica uso de cheque especial;
+
+        if (this.cheque_especial > 0){
+            return true;
+        }
+        return false;
+    }
+
+    public void DepositarSaldo(float saldo){ //depositar dinheiro
+        this.saldo += saldo;
+    }
+
+    public boolean SacarDinheiro(float saldo){ //sacar dinheiro
+
+        if (saldo <= this.saldo){
+            this.saldo =- saldo;
+            return true;
+        }
+
+        if (saldo <= this.saldo + this.cheque_especial && this.cheque_especial + ((this.saldo - saldo) * -1) <= this.LIMITE_CHEQUE_ESPECIAL ){
+            this.saldo =- saldo;
+            if (this.saldo < 0){
+               this.cheque_especial += this.saldo * -1;
+               this.saldo = 0;
+            }
+            return true;
+        }
+
+
+        return false;
+    }
+
+
+    public void AtualizaConta(){
+
+        if (VerificaUsoChequeEsp()){
+            this.saldo += this.cheque_especial * 0.2;
+        }
+    }
+
+}
