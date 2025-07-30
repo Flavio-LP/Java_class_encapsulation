@@ -51,10 +51,17 @@ public class Main {
         boolean menu = true;
         var scanner = new Scanner(System.in);
         int opcao;
-        double valor = 0;
+        double valor;
+
+        System.out.println("Digite um valor para abrir sua conta");
+        valor = scanner.nextDouble();
+        account.setSaldo(valor);
+        account.setChequeEspecial();
+
+        LimpaTerminal();
 
 
-        
+
         while (menu){
 
            
@@ -88,7 +95,6 @@ public class Main {
                     System.out.println("Digite o valor que deseja depositar:");
                     valor = scanner.nextDouble();
                     account.DepositarSaldo(valor);
-                    account.setChequeEspecial();
                     account.AtualizaConta();
                     System.out.println("Saldo depositado");
                     break;

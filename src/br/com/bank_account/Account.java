@@ -7,7 +7,7 @@ public class Account {
     private double LIMITE_CHEQUE_ESPECIAL = 0;
     private double taxa = 0;
 
-    public void setSaldo(float saldo) {
+    public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
@@ -73,6 +73,7 @@ public class Account {
 
         return false;
     }
+
 
 
     public void AtualizaConta(){
