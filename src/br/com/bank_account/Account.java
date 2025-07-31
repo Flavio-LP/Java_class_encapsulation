@@ -40,7 +40,14 @@ public class Account {
         this.saldo += saldo;
     }
 
-    public boolean SacarDinheiro(double saldo){ //sacar dinheiro
+    public boolean RealizaOperacao(double saldo){
+        if (ProcessaSaldo(saldo)){
+            return true;
+        } 
+        return false;
+    }
+
+    public boolean ProcessaSaldo(double saldo){ //sacar dinheiro
 
 
         if (saldo <= this.saldo){
