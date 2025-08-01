@@ -1,7 +1,7 @@
-import br.com.bank_account.Account;
-import br.com.bank_account.Account_Operation;
+import br.com.bank_account.*;
 import java.util.Scanner;
 import util.So;
+import br.com.car.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -11,6 +11,8 @@ public class Main {
         var scanner = new Scanner(System.in);
         Account account = new Account();
         Account_Operation acc_op = new Account_Operation();
+        Car carro = new Car(false,0,0);
+        Car_Operation caroperation = new Car_Operation();
         So so = new So();
         boolean menu = true;
         int opcao;
@@ -35,6 +37,7 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("Carro");
+                    caroperation.ProcessaCarro(carro);
                     break;
                 case 3:
                     System.out.println("Petshop");
