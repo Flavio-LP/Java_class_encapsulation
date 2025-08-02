@@ -78,8 +78,8 @@ public class Car {
             if(this.marcha == 0 ){
                this.marcha++;
                this.velocidade++;
-               System.out.println("Marcha trocada!");
-               System.out.println("Velocidade aplicada!");
+               //System.out.println("Marcha trocada!");
+               //System.out.println("Velocidade aplicada!");
                return;
             }
 
@@ -154,6 +154,7 @@ public class Car {
             if (this.marcha <= 1){
                 if (this.velocidade > 0 && this.velocidade <= 20){
                     this.marcha++;
+                    this.velocidade++;
                     System.out.println("Marcha Trocada!");
                 } else{
                     System.out.println("Velocidade incorreta");
@@ -163,6 +164,7 @@ public class Car {
             else if (this.marcha < 2){
                 if (this.velocidade > 21 && this.velocidade < 40){
                     this.marcha++;
+                    this.velocidade++;
                     System.out.println("Marcha Trocada!");
                 } else{
                     System.out.println("Velocidade incorreta");
@@ -171,6 +173,7 @@ public class Car {
             } else if (this.marcha < 3){
                 if (this.velocidade >= 41 && this.velocidade < 60){
                     this.marcha++;
+                    this.velocidade++;
                     System.out.println("Marcha Trocada!");
                 } else{
                     System.out.println("Velocidade incorreta");
@@ -179,6 +182,7 @@ public class Car {
             } else if (this.marcha < 4){
                 if (this.velocidade >= 61 && this.velocidade < 80){
                     this.marcha++;
+                    this.velocidade++;
                     System.out.println("Marcha Trocada!");
                 } else{
                     System.out.println("Velocidade incorreta");
@@ -187,6 +191,7 @@ public class Car {
             } else if  (this.marcha < 5){
                 if (this.velocidade >= 81 && this.velocidade < 100){
                     this.marcha++;
+                    this.velocidade++;
                     System.out.println("Marcha Trocada!");
                 } else{
                     System.out.println("Velocidade incorreta");
@@ -195,6 +200,7 @@ public class Car {
             } else{
                 if (this.velocidade >= 101 && this.velocidade < 120){
                     this.marcha++;
+                    this.velocidade++;
                     System.out.println("Marcha Trocada!");
                 } else{
                     System.out.println("Marcha máxima atingida!");
@@ -205,54 +211,50 @@ public class Car {
 
         } else{
 
-            if (this.marcha == 1 && this.marcha > 0 ){
-                if (this.velocidade > 0 && this.velocidade <= 20){
+            if(this.marcha == 6){
+                if (this.velocidade >= 102){
+                    System.out.println("reduza a velocidade para 101km/h para diminuir a marcha!");
+                }else{
+                    this.velocidade--;
                     this.marcha--;
-                    System.out.println("Marcha Trocada!");
-                } else{
-                    System.out.println("Velocidade incorreta");
                 }
-
-            }
-            else if (this.marcha < 2){
-                if (this.velocidade > 21 && this.velocidade < 40){
-                    this.marcha++;
-                    System.out.println("Marcha Trocada!");
-                } else{
-                    System.out.println("Velocidade incorreta");
-                }
-
-            } else if (this.marcha < 3){
-                if (this.velocidade >= 41 && this.velocidade < 60){
+            } else if (this.marcha == 5){
+                if (this.velocidade >= 82){
+                    System.out.println("reduza a velocidade para 81km/h para diminuir a marcha!");
+                }else{
+                    this.velocidade--;
                     this.marcha--;
-                    System.out.println("Marcha Trocada!");
-                } else{
-                    System.out.println("Velocidade incorreta");
                 }
-
-            } else if (this.marcha < 4){
-                if (this.velocidade >= 61 && this.velocidade < 80){
+            }else if (this.marcha == 4){
+                if (this.velocidade >= 62){
+                    System.out.println("reduza a velocidade para 61km/h para diminuir a marcha!");
+                }else{
+                    this.velocidade--;
                     this.marcha--;
-                    System.out.println("Marcha Trocada!");
-                } else{
-                    System.out.println("Velocidade incorreta");
                 }
-
-            } else if  (this.marcha < 5){
-                if (this.velocidade >= 81 && this.velocidade < 100){
+            }else if (this.marcha == 3){
+                if (this.velocidade >= 42){
+                    System.out.println("reduza a velocidade para 4km/h para diminuir a marcha!");
+                }else{
+                    this.velocidade--;
                     this.marcha--;
-                    System.out.println("Marcha Trocada!");
-                } else{
-                    System.out.println("Velocidade incorreta");
                 }
-
+            }else if (this.marcha == 2){
+                if (this.velocidade >= 22){
+                    System.out.println("reduza a velocidade para 21km/h para diminuir a marcha!");
+                }else{
+                    this.velocidade--;
+                    this.marcha--;
+                }
             } else{
-                if (this.velocidade >= 101 && this.velocidade < 120){
-                    this.marcha++;
-                    System.out.println("Marcha Trocada!");
-                } else{
-                    System.out.println("Marcha mínima atingida!");
+                if (this.marcha == 1) {
+                    System.out.println("Marcha mínima, não é possível reduzir!");
+                    return;
                 }
+                //System.out.println("marcha:" + this.marcha);
+                //System.out.println("velcidade: " + this.velocidade );
+
+
             }
 
 

@@ -1,5 +1,8 @@
 import br.com.bank_account.*;
 import java.util.Scanner;
+
+import br.com.pet_shop.PetShop;
+import br.com.pet_shop.PetShopOperation;
 import util.So;
 import br.com.car.*;
 
@@ -13,6 +16,8 @@ public class Main {
         Account_Operation acc_op = new Account_Operation();
         Car carro = new Car(false,0,0);
         Car_Operation caroperation = new Car_Operation();
+        PetShop petShop = new PetShop();
+        PetShopOperation petShopOperation = new PetShopOperation();
         So so = new So();
         boolean menu = true;
         int opcao;
@@ -40,6 +45,7 @@ public class Main {
                     caroperation.ProcessaCarro(carro);
                     break;
                 case 3:
+                    petShopOperation.ProcessaPetShop(petShop);
                     System.out.println("Petshop");
                     break;
                 case 4:

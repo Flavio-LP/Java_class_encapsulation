@@ -1,5 +1,7 @@
 package br.com.car;
 
+import util.So;
+
 import java.util.Scanner;
 
 public class Car_Operation {
@@ -9,6 +11,7 @@ public class Car_Operation {
 
         boolean menu = true;
         Scanner scanner = new Scanner(System.in);
+        So so = new So();
         int Opcao;
         int OpcaoDirecao;
         int OpcaoMarcha;
@@ -27,6 +30,7 @@ public class Car_Operation {
             System.out.println("- 7- Trocar marcha     -");
             System.out.println("------------------------");
 
+            so.LimpaTerminal();
 
             Opcao = scanner.nextInt();
 
@@ -67,6 +71,7 @@ public class Car_Operation {
                 default:
                     System.out.println("Opção inválida");
                     System.out.println("Finalizando controle do carro!");
+                    carro = null;
                     menu = false;
                     break;
             }
