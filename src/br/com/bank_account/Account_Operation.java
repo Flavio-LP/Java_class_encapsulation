@@ -24,20 +24,24 @@ public class Account_Operation {
 
         while (menu){
 
-           
 
-            System.out.println("-----------------------------");
-            System.out.println("- Bem vindo ao java banking -");
-            System.out.println("- Selecione a opção:        -");
-            System.out.println("- 1 - Consultar Saldo       -");
-            System.out.println("- 2 - Consultar Cheque Esp. -");
-            System.out.println("- 3 - Depositar Saldo       -");
-            System.out.println("- 4 - Sacar Saldo           -");
-            System.out.println("- 5 - Pagar Boleto          -");
-            System.out.println("- 6 - Verif. Cheque Esp.    -");
-            System.out.println("- 7 - Sair                  -");
-            System.out.println("-----------------------------");
-            opcao = scanner.nextInt();
+            try {
+                System.out.println("-----------------------------");
+                System.out.println("- Bem vindo ao java banking -");
+                System.out.println("- Selecione a opção:        -");
+                System.out.println("- 1 - Consultar Saldo       -");
+                System.out.println("- 2 - Consultar Cheque Esp. -");
+                System.out.println("- 3 - Depositar Saldo       -");
+                System.out.println("- 4 - Sacar Saldo           -");
+                System.out.println("- 5 - Pagar Boleto          -");
+                System.out.println("- 6 - Verif. Cheque Esp.    -");
+                System.out.println("- 7 - Sair                  -");
+                System.out.println("-----------------------------");
+                opcao = scanner.nextInt();
+            }catch (Exception e) {
+                System.out.println("Digite um número!");
+                return;
+            }
 
             //so.LimpaTerminal();
 
@@ -52,15 +56,25 @@ public class Account_Operation {
                     System.out.println("Seu cheque especial é: " + account.getChequeEspecial());
                     break;
                 case 3:
+                    try{
                     System.out.println("Digite o valor que deseja depositar:");
                     valor = scanner.nextDouble();
                     account.DepositarSaldo(valor);
                     account.AtualizaConta();
                     System.out.println("Saldo depositado");
                     break;
+                    }catch (Exception e) {
+                        System.out.println("Digite um número!");
+                        return;
+                    }
                 case 4:
+                    try{
                     System.out.println("Digite o valor que deseja sacar:");
-                    valor = scanner.nextDouble();
+                    valor = scanner.nextDouble();}
+                    catch (Exception e) {
+                        System.out.println("Digite um número!");
+                        return;
+                    }
                     if (account.RealizaOperacao(valor)){
                         System.out.println("Valor sacado!");
                     } else{
@@ -68,8 +82,13 @@ public class Account_Operation {
                     }
                     break;
                 case 5:
+                    try{
                     System.out.println("Digite o valor do boleto que deseja sacar:");
-                    valor = scanner.nextDouble();
+                    valor = scanner.nextDouble();}
+                    catch (Exception e) {
+                        System.out.println("Digite um número!");
+                        return;
+                    }
                     if (account.RealizaOperacao(valor)){
                         System.out.println("Boleto pago!");
                     } else{

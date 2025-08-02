@@ -18,7 +18,7 @@ public class Car_Operation {
 
         while (menu){
 
-
+            try{
             System.out.println("------------------------");
             System.out.println("--     Car Manager    --");
             System.out.println("- 1- Ligar veiculo     -");
@@ -32,7 +32,11 @@ public class Car_Operation {
 
             so.LimpaTerminal();
 
-            Opcao = scanner.nextInt();
+            Opcao = scanner.nextInt();}
+            catch (Exception e) {
+                    System.out.println("Digite um número!");
+                    return;
+                }
 
             switch (Opcao){
                 case 1:
@@ -48,6 +52,7 @@ public class Car_Operation {
                     carro.Desacelerar();
                     break;
                 case 5:
+                    try{
                     System.out.println("---------------");
                     System.out.println("- Virar para: -");
                     System.out.println(" 1- Esquerda  -");
@@ -55,11 +60,16 @@ public class Car_Operation {
                     System.out.println("---------------");
                     OpcaoDirecao = scanner.nextInt();
                     carro.Direcionar(OpcaoDirecao);
-                    break;
+                    break;}
+                    catch (Exception e) {
+                        System.out.println("Digite um número!");
+                        return;
+                    }
                 case 6:
                     System.out.println("A velocidade do carro é: " + carro.GetVelocidade());
                     break;
                 case 7:
+                    try{
                     System.out.println("------------------");
                     System.out.println("- Trocar marcha: -");
                     System.out.println(" 1- aumentar     -");
@@ -67,7 +77,11 @@ public class Car_Operation {
                     System.out.println("------------------");
                     OpcaoMarcha = scanner.nextInt();
                     carro.TrocarMarcha(OpcaoMarcha);
-                    break;
+                    break;}
+                    catch (Exception e) {
+                        System.out.println("Digite um número!");
+                        return;
+                    }
                 default:
                     System.out.println("Opção inválida");
                     System.out.println("Finalizando controle do carro!");

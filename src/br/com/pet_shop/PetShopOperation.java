@@ -17,7 +17,7 @@ public class PetShopOperation {
 
         while (menu){
 
-
+            try{
             System.out.println("---------------------------");
             System.out.println("--   PetShop Manager     --");
             System.out.println("- 1- Dar banho no pet     -");
@@ -33,7 +33,11 @@ public class PetShopOperation {
 
             so.LimpaTerminal();
 
-            Opcao = scanner.nextInt();
+            Opcao = scanner.nextInt();}
+            catch (Exception e) {
+                System.out.println("Digite um número!");
+                return;
+            }
 
             switch (Opcao){
                 case 1:

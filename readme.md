@@ -1,5 +1,7 @@
 # Exercícios
 
+- Para testar, basta baixar o repositório e excutar o arquivo main, há um menu interativo para cada operação de exercícios que pode ser selecionado de acordo os números que o usuário digita!
+
 ## todos os execicios devem ter um menu de interativo para chamar as funções e ter uma opção de sair para finalizar a execução
 
 1. Escreva um código onde temos uma conta bancaria que possa realizar as seguintes operações:

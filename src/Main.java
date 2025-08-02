@@ -25,15 +25,22 @@ public class Main {
         while( menu){
 
             so.LimpaTerminal();
-            
-            System.out.println("----------------------");
-            System.out.println("- Selecione a opção: -");
-            System.out.println("- 1 - Conta Bancaria -");
-            System.out.println("- 2 - Carro          -");
-            System.out.println("- 3 - Petshop        -");
-            System.out.println("- 4 - Sair           -");
-            System.out.println("----------------------");
-            opcao = scanner.nextInt();
+
+            try {
+                System.out.println("----------------------");
+                System.out.println("- Selecione a opção: -");
+                System.out.println("- 1 - Conta Bancaria -");
+                System.out.println("- 2 - Carro          -");
+                System.out.println("- 3 - Petshop        -");
+                System.out.println("- 4 - Sair           -");
+                System.out.println("----------------------");
+                opcao = scanner.nextInt();
+            } catch (Exception e) {
+                System.out.println("Digite um número!");
+                return;
+            }
+
+
 
             switch (opcao){
                 case 1:
